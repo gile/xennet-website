@@ -198,6 +198,13 @@ a:before, a:after {
     border-radius: 2px;
 }
 
+.btn-join {
+    width: 150px;
+    height: 74px;
+    padding-top: 16px;
+    font-size: 18pt;
+}
+
 .team-member {
     padding: 3px;
     border: 1px solid #d0d0d0;
@@ -209,10 +216,10 @@ a:before, a:after {
 \*------------------------------------*/
 
 .divider { /* It is how single divider look's */
-    width: 80%;
+    width: 70%;
     height: 20px;
     margin: 0 auto;
-    border-top: solid 1px grey;
+    border-top: solid 1px #999;
 }
 
 /* Background images for each divider can be fitted here, for demo purposes I set all images to the same one. Change it to youre likings *
@@ -398,13 +405,13 @@ a:before, a:after {
 \*------------------------------------*/
 
 .feature-wrap {
-    padding-top: 65px;
+    padding-top: 15px;
     margin-top: 0px;
     background-color: #fff;
 }
 
     .feature-wrap h2 {
-        padding: 50px 0 5px 0;
+        padding: 0px 0 5px 0;
         margin: 0 50px 0 50px;
     }
 
