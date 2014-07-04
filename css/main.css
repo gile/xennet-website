@@ -210,7 +210,9 @@ a:before, a:after {
     border: 1px solid #d0d0d0;
 }
 
-
+body {
+    background-color:  #efeee8;
+}
 /*------------------------------------*\
     $DIVIDERS
 \*------------------------------------*/
@@ -278,7 +280,8 @@ a:before, a:after {
 
 .logo {
     font-size: 22px;
-    color: #34495e;
+    /*color: #34495e;*/
+    color: white;
 }
 
 .icon-menu {
@@ -299,7 +302,8 @@ a:before, a:after {
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
-    color: #999;
+    /*color: #999;*/
+    color: #fff;
     background-color: transparent;
 }
 
@@ -309,17 +313,18 @@ a:before, a:after {
 
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
-    background-color: transparent;
+    /*background-color: transparent;*/
 }
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    background-color: #16a085;
+    /*background-color: #16a085;*/
 	color: white;
 }
 
 .navbar-inverse {
-    background-color: rgba(255, 255, 255, 0.9);
+    /*background-color: rgba(255, 255, 255, 0.9);*/
+    background-color: rgba(70, 30, 170, 1);
 }
 
 .navbar-brand {
@@ -332,16 +337,21 @@ a:before, a:after {
 
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-    color: #7e7e7e;
+    /*color: #7e7e7e;*/
+    color: #7df;
 }
 
-
+/* override bootstrap.css */
+.navbar-inverse .navbar-nav > li > a {
+    color: #a9a9a9;
+    font-weight: bold;
+}
 /*------------------------------------*\
     $HEADER
 \*------------------------------------*/
 
 .header-wrap {
-    background: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_524000a90aaad_1.JPG') no-repeat center top;
+    background: url('//localhost:90/images/circuit-board-2.jpg') no-repeat center top;
     padding-top: 140px;
     margin-top: -50px;
     min-height: 750px;
@@ -400,6 +410,7 @@ a:before, a:after {
     }
 
 
+
 /*------------------------------------*\
     $FEATURE-WRAP
 \*------------------------------------*/
@@ -407,7 +418,7 @@ a:before, a:after {
 .feature-wrap {
     padding-top: 15px;
     margin-top: 0px;
-    background-color: #fff;
+    /*background-color: #fff;*/
 }
 
     .feature-wrap h2 {
@@ -421,6 +432,25 @@ a:before, a:after {
         letter-spacing: 1px;
     }
 
+
+/*------------------------------------*\
+    $DIAGRAMS
+\*------------------------------------*/
+h2.diagram-title {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 26px;
+}
+
+.diagram-text {
+    text-align: center; 
+}
+
+.diagram-img {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    max-height: 400px;
+}
 
 /*------------------------------------*\
     $PORTFOLIO
