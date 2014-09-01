@@ -31,16 +31,16 @@ body {
   height: 100%;
 }
 body {
-  font-family: 'Signika', sans-serif;
+  font-family: "Lato";
   line-height: 1.3;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
   color: #555;
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
 }
 hr {
-  border-top: 1px solid #ccc;
+  /*border-top: 1px solid #ccc;*/
   position: relative;
   display: block;
   margin: 1em 0;
@@ -55,7 +55,7 @@ hr:before {
   left: 40%;
   width: 20%;
   height: 1px;
-  background: #eee;
+  /*background: #eee;*/
 }
 img {
   vertical-align: middle;
@@ -80,31 +80,40 @@ textarea {
   text-shadow: none;
 }
 .main-title {
+  font-family: 'Roboto Slab', serif;
+}
+.sub-title {
   font-family: "Lato";
 }
 .section-title {
-  font-family: "Lato";
+  font-family: 'Roboto Slab', serif;
 }
 .background-color {
   background-color: #fffffa !important;
 }
 .header-link {
   background-color: transparent !important;
-  color: white;
+  margin: 0 15px;
+  color: #ffffff;
 }
 .header-link:hover {
   color: #77ddff;
 }
 .header-link.header-link-scrolled {
   font-weight: normal !important;
-  color: lightsteelblue;
+  color: white;
 }
 .header-link.header-link-scrolled:hover {
-  color: steelblue;
+  color: #7fe9e4;
 }
-.logo.header-link-scrolled,
-.active > .header-link-scrolled {
-  color: lightsteelblue !important;
+.logo:hover {
+  color: #7fe9e4;
+}
+.logo.header-link-scrolled {
+  color: white;
+}
+.logo.header-link-scrolled:hover {
+  color: #7fe9e4;
 }
 .social-icon {
   width: 48px;
@@ -129,13 +138,21 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Raleway', sans-serif;
+  /*font-family: 'Raleway', sans-serif;*/
+  font-family: 'Roboto Slab', serif;
   font-weight: 300;
   color: #3b3b3b;
 }
+h1 {
+  font-size: 38px;
+  /*margin-bottom: 0;*/
+}
+h2 {
+  font-size: 26px;
+}
 p {
   margin-bottom: 25px;
-  line-height: 28px;
+  line-height: 23px;
 }
 .center {
   text-align: center;
@@ -269,42 +286,52 @@ body {
 .divider-bg-5 { background-image: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_524000a90aaad_1.JPG'); } 
 /**/
 /*------------------------------------*\
-    $FOOTER
+    $HEADER
 \*------------------------------------*/
-.footer {
+.header.header-scrolled {
+  /*border-bottom: 1px solid @headerMenuDark; */
+  background-color: #1fa8a4;
+}
+.header.header-scrolled .header-container {
+  border-bottom: 0;
+}
+.header-container {
+  height: 50px;
+  /*padding-top: 8px;*/
+  border-bottom: 1px solid #ffffff;
+}
+.header-wrap {
+  /*background-color: @coverColor;*/
+  /*background: url('../images/abstract.jpg');*/
+  background: url('../images/abstract-turq.jpg');
+  /*background: url('http://sangil-test.comze.com/images/circuit-board-2.jpg') no-repeat center top;*/
+  /*background: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_524000a90aaad_1.JPG') no-repeat center top;*/
+  /*background: url('http://openclipart.org/people/tagawa/circuit-board.svg') no-repeat center top;*/
+  padding-top: 40px;
+  margin-top: -50px;
+  height: 750px;
   width: 100%;
-  margin: 0 auto;
-  padding: 35px 0 70px 0;
-  max-height: 500px;
-  display: table;
-  background-position: center center;
-  /*background-attachment: fixed;*/
-  /* background-color: #3c4e60;*/
-  z-index: 999;
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
   background-size: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
 }
-.footer h1 {
-  font-size: 40px;
-  color: #f4f4f4;
-  padding-top: 70px;
+.header-wrap h1 {
+  font-size: 100px;
+  /*font-weight: bold;*/
+  padding-bottom: 10px;
+  margin-top: 270px;
+  color: #ecf0f1;
+  font-variant: small-caps;
 }
-.footer p {
-  color: #f4f4f4;
-  font-size: 20px;
-}
-.social-footer {
-  padding-top: 5px;
-  height: 60px;
-  line-height: 60px;
-  /*background-color: rgba(70, 30, 170, 0.7);*/
+.header-wrap p {
+  font-size: 38px;
+  font-weight: 300;
+  line-height: 26px;
+  letter-spacing: 0.5px;
+  color: #ecf0f1;
 }
 /*------------------------------------*\
     $NAVIGATION
@@ -339,6 +366,7 @@ body {
   /*color: #999;*/
   /*color: #fff;*/
   background-color: transparent;
+  border-bottom: 1px solid white;
   /*font-weight: 500;*/
 }
 .navbar-inverse .navbar-collapse {
@@ -378,45 +406,6 @@ body {
   /*color: white;*/
 }
 /*------------------------------------*\
-    $HEADER
-\*------------------------------------*/
-.header-container {
-  height: 70px;
-  padding-top: 8px;
-  border-bottom: 1px solid steelblue;
-}
-.header-wrap {
-  background: url('../images/abstract.jpg');
-  /*background: url('http://sangil-test.comze.com/images/circuit-board-2.jpg') no-repeat center top;*/
-  /*background: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_524000a90aaad_1.JPG') no-repeat center top;*/
-  /*background: url('http://openclipart.org/people/tagawa/circuit-board.svg') no-repeat center top;*/
-  padding-top: 40px;
-  margin-top: -50px;
-  height: 750px;
-  width: 100%;
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  background-size: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-}
-.header-wrap h1 {
-  font-size: 100px;
-  /*font-weight: bold;*/
-  padding-bottom: 10px;
-  margin-top: 270px;
-  color: #ecf0f1;
-  font-variant: small-caps;
-}
-.header-wrap p {
-  font-size: 38px;
-  font-weight: 300;
-  line-height: 26px;
-  letter-spacing: 0.5px;
-  color: #ecf0f1;
-}
-/*------------------------------------*\
     $VISION
 \*------------------------------------*/
 .vision-wrap {
@@ -450,6 +439,7 @@ body {
   margin: auto;
   /*border: 1px solid red;*/
   z-index: 10;
+  cursor: pointer;
 }
 .bullet-icon-container {
   font-size: 40px;
@@ -470,7 +460,7 @@ body {
   cursor: pointer;
 }
 i {
-  color: #ff8f03;
+  color: #e82f50;
   cursor: pointer;
   opacity: 0.9;
 }
@@ -485,8 +475,9 @@ i:hover {
   top: 0;
   width: 100%;
   margin: auto;
-  font-family: "Lato";
+  font-family: 'Roboto Slab', serif;
   font-weight: 400;
+  cursor: pointer;
   /*width: 50%;*/
   /*float: right;*/
 }
@@ -495,6 +486,7 @@ i:hover {
   top: 0;
   left: 0;
   width: 100%;
+  cursor: pointer;
   /*width: 50%;*/
   /*float: right;   */
 }
@@ -502,13 +494,13 @@ i:hover {
   position: absolute;
   top: 0;
   left: 0;
-  /*height: 0;*/
+  width: 100%;
   opacity: 0;
   padding: 60px 20px 0px;
   margin: 0;
   cursor: pointer;
   height: 120px;
-  text-align: left !important;
+  /*text-align: left !important;        */
 }
 .bullet-overlay-text {
   text-align: left !important;
@@ -548,8 +540,10 @@ i:hover {
 }
 .feature-wrap p {
   padding: 15px 0 15px 0;
-  margin: 0 50px 0 50px;
-  letter-spacing: 1px;
+  margin: 0 10px 0 40px;
+  /*letter-spacing: 1px;*/
+  text-align: left;
+  letter-spacing: 0.5px;
 }
 /*------------------------------------*\
     $DIAGRAMS
@@ -629,7 +623,7 @@ h2.diagram-title {
 }
 #works .works-section-title {
   /*color: #FF9933;*/
-  color: #ff8f03;
+  color: #e82f50;
 }
 /*------------------------------------*\
     $PRESS
@@ -643,13 +637,51 @@ h2.diagram-title {
   font-size: 26px;
   /*background-color: steelblue;
         color: white;*/
-  font-family: "Lato";
+  font-family: 'Roboto Slab', serif;
   /*font-weight: bold;*/
-  color: #ff8f03;
+  color: #e82f50;
   /*color: #FF9933;*/
 }
 .press-article-title a:hover {
   opacity: 0.5;
+}
+/*------------------------------------*\
+    $FOOTER
+\*------------------------------------*/
+.footer {
+  width: 100%;
+  margin: 0 auto;
+  padding: 35px 0 70px 0;
+  max-height: 500px;
+  display: table;
+  background-position: center center;
+  /*background-attachment: fixed;*/
+  /* background-color: #3c4e60;*/
+  z-index: 999;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  background-size: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+.footer h1 {
+  font-size: 40px;
+  color: #f4f4f4;
+  padding-top: 70px;
+}
+.footer p {
+  color: #f4f4f4;
+  font-size: 20px;
+}
+.social-footer {
+  padding-top: 5px;
+  height: 60px;
+  line-height: 60px;
+  /*background-color: rgba(70, 30, 170, 0.7);*/
 }
 /*------------------------------------*\
     $MEDIA-QUERIES
@@ -702,9 +734,6 @@ h2.diagram-title {
     font-size: 32px;
     line-height: 34px;
   }
-  .works-section-text {
-    text-align: center;
-  }
   img.diagram-img {
     max-width: 250px !important;
   }
@@ -716,5 +745,13 @@ h2.diagram-title {
   }
   .info-link-col {
     margin-top: 0;
+  }
+}
+@media screen and (max-width: 450px) {
+  .bullet {
+    margin-bottom: 70px;
+  }
+  .bullet-title {
+    font-size: 24px;
   }
 }

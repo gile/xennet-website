@@ -338,7 +338,7 @@ hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 1px solid #eee;
+  /*border-top: 1px solid #eee;*/
 }
 .sr-only {
   position: absolute;
@@ -3459,7 +3459,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 10px 15px;
+  /*padding: 10px 15px;*/
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
@@ -3787,7 +3787,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-nav > li > a {
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 4px;
   line-height: 20px;
 }
 @media (max-width: 767px) {
@@ -3822,7 +3822,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-nav > li > a {
     padding-top: 15px;
-    padding-bottom: 15px;
+    /*padding-bottom: 15px;*/
   }
   .navbar-nav.navbar-right:last-child {
     margin-right: -15px;
