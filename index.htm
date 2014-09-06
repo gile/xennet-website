@@ -17,8 +17,8 @@
         <link href="./css/bootstrap.css" rel="stylesheet" type="text/css">
 
         <!-- Custom theme styles -->
-        <link href="./css/main.css" rel="stylesheet" type="text/css"> <!-- Default theme CSS -->
-        <!-- <link href="./css/icomoon.css" rel="stylesheet" type="text/css"> <!-- Custom icons --> 
+        <link href="./css/main.css" rel="stylesheet" type="text/css"> 
+        <!-- <link href="./css/icomoon.css" rel="stylesheet" type="text/css">  --> 
         <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="./css/animate.css" rel="stylesheet" type="text/css"> <!-- For sweet water CSS animations -->
 
@@ -38,27 +38,30 @@
         <![endif]-->
     <style type="text/css"></style>
 <script type="text/javascript" >
-        $('document').ready(function() {
-            var duration = 300,
-                    hover = false,
-                    coverHeight = $('.header-wrap').height();
+        var id,
+              coverHeight;
 
+        $('document').ready(function() {
+            var   duration = 300,
+                    hover = false;
+                                       
             var backgroundColor = '#fffffa',
+                  headerWidth = '85%',
                   isScrolled = false;//$('body').scrollTop() > coverHeight - 50;          
 
-            var bulletCLick = function() {
+            var bulletClick = function() {
                     //var $el = $(this).parent().parent();
-                    var $el = $(this).parent(),
+                    var    $el = $(this).hasClass('bullet') ? $(this) : $(this).parent(),
                             clicked = $el.attr('clicked') === 'true' ? true : false;
 
                     if (!clicked) {
                         $el.attr('clicked', true);
-                        $el.find('.bullet-icon-container').animate({'top': -100, 'opacity': 0}, duration);
+                        $el.find('.bullet-icon-container').animate({'top': -50, 'opacity': 0}, duration);
                         $el.find('.bullet-title').animate({'top': -30, 'opacity': 1}, duration);
-                        $el.find('.bullet-text').animate({'top': 100, 'opacity': 0}, duration);
+                        $el.find('.bullet-text').animate({'top': 50, 'opacity': 0}, duration);
                         //$(this).find('.bullet-content').animate({'opacity': 0}, duration);
 
-                        $el.find('.bullet-overlay').delay(duration - 100).animate({'opacity': 1}, duration);
+                        $el.find('.bullet-overlay').delay(duration - 50).animate({'opacity': 1}, duration);
                     }
 
                     else {
@@ -73,26 +76,37 @@
             };            
 
             var scrolled = function() {
-                
-                if ( !isScrolled && $('body').scrollTop() > coverHeight - 50) {
+                        
+                var scrollTop = $(document).scrollTop();
+
+                if ( !isScrolled && scrollTop > coverHeight - 20) {
                     $('.header .header-link').addClass('header-link-scrolled');
                     $('.logo').addClass('header-link-scrolled');
                     //$('.header').addClass('background-color');
                     $('.header').addClass('header-scrolled');
                     $('.menu-label').addClass('header-link-scrolled');
                     isScrolled = true;
+
+                    $('.header-container').animate({'width': '100%'});
                 }
-                else if (isScrolled && $('body').scrollTop() <= coverHeight - 50) {                 
+                else if (isScrolled && scrollTop <= coverHeight - 20) {                 
                     $('.header .header-link').removeClass('header-link-scrolled');
                     $('.logo').removeClass('header-link-scrolled');
                     //$('.header').removeClass('background-color')
                     $('.header').removeClass('header-scrolled');
                     $('.menu-label').removeClass('header-link-scrolled');
                     isScrolled = false;
+
+                    $('.header-container').animate({'width': headerWidth});
                 }
             }
 
-            $('.bullet-content').click(bulletCLick);
+            coverHeight = $('.header-wrap').height();
+
+            $('.header-container').css({'width': headerWidth});
+
+            $('.bullet').click(bulletClick);
+            //$('.bullet-content').click(bulletClick);
 
             $('.bullet-content').animate({'opacity': 1}, duration);
             
@@ -100,6 +114,23 @@
             
             scrolled();
         });
+
+        /////////////////////////////////////////////////////////////
+        // Global Event Handlers
+        /////////////////////////////////////////////////////////////
+        $(window).resize(function() {
+            clearTimeout(id);
+            id = setTimeout(doneResizing, 500);
+            
+        }); 
+
+        /////////////////////////////////////////////////////////////
+        // Private Methods
+        /////////////////////////////////////////////////////////////   
+        function doneResizing(){
+            coverHeight = $('.header-wrap').height();             
+        }
+
 </script>
 
 </head>
@@ -327,7 +358,7 @@
                         <br>           
                         <br>
                         <div class="col-lg-12  center info-link-col">
-                                <a class="info-link" href="./about/index.html" target="_blank">More Info</a>
+                                <a class="info-link" href="about/index.html" target="_blank">More Info</a>
                         </div>    
                 </div>
                 <div id="press-target"></div>
@@ -430,7 +461,7 @@
     </div><!-- services/features section ends   
 
 
-<!-- #4 Divider with few words/quote -->
+<!--  Divider with few words/quote -->
     <section class="divider  divider-bg-4  center">
     </section><!-- #4 divider ends -->  
     
@@ -443,7 +474,7 @@
     <div class="container links-container  center"  id="links">        
         <div class="row">
             <div class="col-md-6  callout additional-links-container" id="email-container">
-                <a class="com-link" href="./about/index.html" target="_blank">
+                <a class="com-link" href="about/index.html" target="_blank">
                         <span class="additional-links-icon"><i class=" fa fa-file-text-o"></i></span>
                 </a>
                 <h2>Documentation</h2>

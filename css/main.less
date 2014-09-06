@@ -64,6 +64,7 @@
 @efratTurquoiseDark: #1FA8A4;
 @efratTurquoiseLight: #7FE9E4;
 @efratPurple: #2E0DE8;
+@efratPurpleLight: #BE9DFF;
 @efratViolet: #1438F3;
 @efratYellowGreen: #9DB828;
 
@@ -73,15 +74,18 @@
 
 /************************************/
 
-@headerMenuDark: @efratTurquoiseDark;
+@headerMenuDark: @efratPurple;
 @headerMenuLight: white;
-@headerMenuLightHover: @efratTurquoiseLight;
-@highlightColor: @efratRed;
+@headerMenuLightHover: @efratPurpleLight;
+@highlightColor: @efratYellowGreen;
 @coverColor: @headerMenuDark;
 @titleFont: @robotoSlab;
 @subTitleFont: @lato;
 @textFont: @lato;
 @textFontWeight: 400;
+@coverPhoto: url('../images/abstract-purple.jpg');
+
+@headerHeight: 50px;
 
 html,
 body {
@@ -168,7 +172,7 @@ textarea {
     color: @headerMenuLight;
 
     &:hover {
-        color: @brightBlue;
+        color: @headerMenuLightHover;
     }
 
     &.header-link-scrolled {    
@@ -399,18 +403,21 @@ body {
     $HEADER
 \*------------------------------------*/
 .header {
+    padding: 0 40px;
+
     &.header-scrolled {
         /*border-bottom: 1px solid @headerMenuDark; */
         background-color: @headerMenuDark;
 
         .header-container {
             border-bottom: 0;
+            
         }
     }
 }
 
 .header-container {
-    height: 50px;
+    height: @headerHeight;
     /*padding-top: 8px;*/
     border-bottom: 1px solid @headerMenuLight; 
 
@@ -419,7 +426,7 @@ body {
 .header-wrap {
     /*background-color: @coverColor;*/
     /*background: url('../images/abstract.jpg');*/
-    background: url('../images/abstract-turq.jpg');
+    background: @coverPhoto;
 
     /*background: url('http://sangil-test.comze.com/images/circuit-board-2.jpg') no-repeat center top;*/
     /*background: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_524000a90aaad_1.JPG') no-repeat center top;*/
@@ -571,6 +578,7 @@ body {
 
 .bullet {
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .bullet-content {
@@ -934,15 +942,54 @@ h2.diagram-title {
     }
 }
 
+
+/** MOBILE HEADER **/
 @media screen and (max-width:769px) {
+    .header {
+        height: @headerHeight;
+        padding: 0 20px;
+    }
+
+    .navbar-toggle {
+        margin-top: 0;
+        margin-right: 0;
+        padding: 0;
+    }
+
+    .navbar-brand {
+        padding: 15px 0;
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        top: (@headerHeight - 1);
+        left: 0;
+        width: 100%;
+        margin: 0 !important;
+        padding-bottom: 10px;
+        background-color: rgba(0, 0, 0, 0.7); 
+    }
+
+    .navbar-inverse .navbar-nav > .active > a,
+    .navbar-inverse .navbar-nav > .active > a:hover,
+    .navbar-inverse .navbar-nav > .active > a:focus {
+        color: @headerMenuLightHover;
+        border-bottom: 0;
+        /*font-weight: 500;*/
+    }
+
+    .header-link {
+        text-align: center;
+    }
+
      .header-wrap {
         /*max-height: 550px;
         min-height: 550px;*/
         height: 400px;                
     }
 
-    .navbar-collapse {
-        background-color: rgba(0, 0, 0, 0.5); 
+    .menu-label {
+        line-height: 47px;
     }
 
     .header-wrap h1 { 
